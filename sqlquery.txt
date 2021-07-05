@@ -1,0 +1,30 @@
+create database Company11; 
+use Company11;
+
+create table location(
+location_id int primary key,
+location_name varchar(20)
+);
+
+create table organization(
+org_id int primary key,
+org_name varchar(20),
+turnover int
+);
+
+drop table organization;
+
+Truncate table organization;
+use cap5challenge1;
+
+select* from celebrity where Gender="Male"  order by Salary ;
+
+select max(c.salary)
+from celebrity c inner join father f
+on c.Father_id=f.Father_id and
+f.Father_Name in ('Will Smith');
+
+select max(c.salary)
+from celebrity c 
+group  by c.city
+having max(c.salary) between 20000 and 38000;
